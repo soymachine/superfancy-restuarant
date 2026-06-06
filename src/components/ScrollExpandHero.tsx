@@ -269,13 +269,19 @@ const ScrollExpandHero = ({
               >
                 <motion.h2
                   className="text-4xl md:text-5xl lg:text-6xl font-bold text-gold-100 transition-none font-serif"
-                  style={{ transform: `translateX(-${textTranslateX}vw)` }}
+                  style={{
+                    transform: `scale(${1 + scrollProgress * 1.5})`,
+                    opacity: 1 - scrollProgress,
+                  }}
                 >
                   {firstWord}
                 </motion.h2>
                 <motion.h2
                   className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-gold-100 transition-none font-serif"
-                  style={{ transform: `translateX(${textTranslateX}vw)` }}
+                  style={{
+                    transform: `scale(${1 - scrollProgress * 0.85})`,
+                    opacity: 1 - scrollProgress,
+                  }}
                 >
                   {restOfTitle}
                 </motion.h2>
