@@ -1,7 +1,8 @@
 ---
+import '../styles/global.css';
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation';
-import Hero from '../sections/Hero';
+import ScrollExpandHero from '../components/ScrollExpandHero';
 import Story from '../sections/Story';
 import Menu from '../sections/Menu';
 import Gallery from '../sections/Gallery';
@@ -12,11 +13,39 @@ import Footer from '../components/Footer';
 
 <Layout title="Superfancy Restaurant - Experiencia Culinaria Extraordinaria">
   <Navigation client:load />
-  <Hero client:load />
-  <Story client:visible />
-  <Menu client:visible />
-  <Gallery client:visible />
-  <Reservations client:visible />
-  <News client:visible />
-  <Footer client:visible />
+
+  <ScrollExpandHero
+    client:load
+    mediaType="video"
+    mediaSrc="https://videos.pexels.com/video-files/4253350/4253350-hd_1920_1080_30fps.mp4"
+    posterSrc="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80"
+    bgImageSrc="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80"
+    title="Superfancy Restaurant"
+    date="Est. 2024"
+    scrollToExpand="Desplaza para descubrir"
+    textBlend={true}
+  >
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-serif font-bold mb-6 text-white">Una Experiencia Culinaria Extraordinaria</h2>
+      <p class="text-lg mb-8 text-white/70">
+        Donde la tradición se encuentra con la innovación. Cada plato cuenta una historia, cada sabor despierta una emoción.
+        Descubre el arte de la gastronomía en un ambiente donde cada detalle ha sido cuidadosamente diseñado para deleitar tus sentidos.
+      </p>
+      <a
+        href="#story"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-gold-500 text-charcoal-950 font-semibold rounded-full hover:bg-gold-400 transition-colors"
+      >
+        Explorar
+      </a>
+    </div>
+  </ScrollExpandHero>
+
+  <div class="relative z-10 bg-charcoal-950">
+    <Story client:visible />
+    <Menu client:visible />
+    <Gallery client:visible />
+    <Reservations client:visible />
+    <News client:visible />
+    <Footer client:visible />
+  </div>
 </Layout>
