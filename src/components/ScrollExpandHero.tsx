@@ -183,17 +183,23 @@ const ScrollExpandHero = ({
               >
                 {mediaType === 'video' ? (
                   <div className="relative w-full h-full pointer-events-none">
-                    <video
-                      src={mediaSrc}
-                      poster={posterSrc}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="auto"
-                      className="w-full h-full object-cover rounded-xl"
-                      controls={false}
-                    />
+                    <motion.div
+                      className="w-full h-full"
+                      animate={{ opacity: 0.3 + scrollProgress * 0.7 }}
+                      transition={{ duration: 0.1 }}
+                    >
+                      <video
+                        src={mediaSrc}
+                        poster={posterSrc}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                        className="w-full h-full object-cover rounded-xl"
+                        controls={false}
+                      />
+                    </motion.div>
                     <div
                       className="absolute inset-0 z-10"
                       style={{ pointerEvents: 'none' }}
@@ -208,11 +214,17 @@ const ScrollExpandHero = ({
                   </div>
                 ) : (
                   <div className="relative w-full h-full">
-                    <img
-                      src={mediaSrc}
-                      alt={title || 'Media content'}
-                      className="w-full h-full object-cover rounded-xl"
-                    />
+                    <motion.div
+                      className="w-full h-full"
+                      animate={{ opacity: 0.3 + scrollProgress * 0.7 }}
+                      transition={{ duration: 0.1 }}
+                    >
+                      <img
+                        src={mediaSrc}
+                        alt={title || 'Media content'}
+                        className="w-full h-full object-cover rounded-xl"
+                      />
+                    </motion.div>
                     <motion.div
                       className="absolute inset-0 bg-black/50 rounded-xl"
                       initial={{ opacity: 0.7 }}
