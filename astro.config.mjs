@@ -4,5 +4,7 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [react(), tailwind()],
-  site: 'https://superfancy-restaurant.com',
+  site: 'https://soymachine.github.io',
+  base: '/superfancy-restuarant',
+  output: 'static',
 });
