@@ -205,7 +205,7 @@ const ScrollExpandHero = ({
                       style={{ pointerEvents: 'none' }}
                     />
 
-                    <div className="absolute inset-0 bg-black/30 rounded-xl" />
+                    <div className="absolute inset-0 bg-black rounded-xl" style={{ backgroundColor: 'black' }} />
                   </div>
                 ) : (
                   <div className="relative w-full h-full">
@@ -220,7 +220,7 @@ const ScrollExpandHero = ({
                         className="w-full h-full object-cover rounded-xl"
                       />
                     </motion.div>
-                    <div className="absolute inset-0 bg-black/50 rounded-xl" />
+                    <div className="absolute inset-0 bg-black rounded-xl" style={{ backgroundColor: 'black' }} />
                   </div>
                 )}
 
