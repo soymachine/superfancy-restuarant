@@ -184,7 +184,7 @@ const ScrollExpandHero = ({
                 {mediaType === 'video' ? (
                   <div className="relative w-full h-full pointer-events-none">
                     <motion.div
-                      className="w-full h-full"
+                      className="absolute inset-0 z-[2]"
                       animate={{ opacity: 0.3 + scrollProgress * 0.7 }}
                       transition={{ duration: 0.1 }}
                     >
@@ -205,17 +205,12 @@ const ScrollExpandHero = ({
                       style={{ pointerEvents: 'none' }}
                     />
 
-                    <motion.div
-                      className="absolute inset-0 bg-black/30 rounded-xl"
-                      initial={{ opacity: 0.7 }}
-                      animate={{ opacity: 0.5 - scrollProgress * 0.3 }}
-                      transition={{ duration: 0.2 }}
-                    />
+                    <div className="absolute inset-0 bg-black/30 rounded-xl" />
                   </div>
                 ) : (
                   <div className="relative w-full h-full">
                     <motion.div
-                      className="w-full h-full"
+                      className="absolute inset-0 z-[2]"
                       animate={{ opacity: 0.3 + scrollProgress * 0.7 }}
                       transition={{ duration: 0.1 }}
                     >
@@ -225,12 +220,7 @@ const ScrollExpandHero = ({
                         className="w-full h-full object-cover rounded-xl"
                       />
                     </motion.div>
-                    <motion.div
-                      className="absolute inset-0 bg-black/50 rounded-xl"
-                      initial={{ opacity: 0.7 }}
-                      animate={{ opacity: 0.7 - scrollProgress * 0.3 }}
-                      transition={{ duration: 0.2 }}
-                    />
+                    <div className="absolute inset-0 bg-black/50 rounded-xl" />
                   </div>
                 )}
 
