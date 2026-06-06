@@ -139,6 +139,22 @@ const ScrollExpandHero = ({
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
+  // Allow anchor links to bypass the scroll lock
+  useEffect(() => {
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a[href^="#"]');
+      if (anchor && !mediaFullyExpanded) {
+        setMediaFullyExpanded(true);
+        setScrollProgress(1);
+        setShowContent(true);
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, [mediaFullyExpanded]);
+
   const mediaWidth = 300 + scrollProgress * (isMobileState ? 650 : 1250);
   const mediaHeight = 400 + scrollProgress * (isMobileState ? 200 : 400);
   const textTranslateX = scrollProgress * (isMobileState ? 180 : 150);
