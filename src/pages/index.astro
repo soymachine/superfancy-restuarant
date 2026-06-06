@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation';
+import Hero from '../sections/Hero';
+import Story from '../sections/Story';
+import Menu from '../sections/Menu';
+import Gallery from '../sections/Gallery';
+import Reservations from '../sections/Reservations';
+import News from '../sections/News';
+import Footer from '../components/Footer';
+---
+
+<Layout title="Superfancy Restaurant - Experiencia Culinaria Extraordinaria">
+  <Navigation client:load />
+  <Hero client:load />
+  <Story client:visible />
+  <Menu client:visible />
+  <Gallery client:visible />
+  <Reservations client:visible />
+  <News client:visible />
+  <Footer client:visible />
+</Layout>
