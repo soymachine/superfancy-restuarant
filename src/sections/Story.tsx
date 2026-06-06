@@ -34,7 +34,7 @@ export default function Story() {
   const rotate = useTransform(scrollYProgress, [0, 1], [-5, 5]);
 
   return (
-    <section id="story" ref={containerRef} className="relative py-32 overflow-hidden">
+    <section id="story" ref={containerRef} className="relative py-32 overflow-hidden bg-charcoal-950">
       {/* Decorative line */}
       <motion.div
         className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold-500/20 to-transparent"

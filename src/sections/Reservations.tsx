@@ -25,12 +25,14 @@ export default function Reservations() {
   };
 
   const inputClasses = (field: string) =>
-    `w-full bg-white/5 border ${
+    `w-full bg-charcoal-900 border ${
       focusedField === field ? 'border-gold-400/50' : 'border-white/10'
-    } rounded-xl px-4 py-3.5 text-white placeholder-white/30 outline-none transition-all duration-300 focus:bg-white/10`;
+    } rounded-xl px-4 py-3.5 text-white placeholder-white/40 outline-none transition-all duration-300 focus:bg-charcoal-800 focus:border-gold-400/50`;
+
+  const selectOptionClasses = 'bg-charcoal-900 text-white';
 
   return (
-    <section id="reservations" className="relative py-32 overflow-hidden">
+    <section id="reservations" className="relative py-32 overflow-hidden bg-charcoal-950">
       {/* Decorative background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-500/20 to-transparent" />
@@ -165,7 +167,7 @@ export default function Reservations() {
                       onBlur={() => setFocusedField(null)}
                     >
                       {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
-                        <option key={n} value={n} className="bg-charcoal-900">{n} {n === 1 ? 'persona' : 'personas'}</option>
+                        <option key={n} value={n} className={selectOptionClasses}>{n} {n === 1 ? 'persona' : 'personas'}</option>
                       ))}
                     </select>
                   </div>
@@ -195,16 +197,16 @@ export default function Reservations() {
                       onFocus={() => setFocusedField('time')}
                       onBlur={() => setFocusedField(null)}
                     >
-                      <option value="" className="bg-charcoal-900">Seleccionar hora</option>
-                      <option value="13:00" className="bg-charcoal-900">13:00</option>
-                      <option value="13:30" className="bg-charcoal-900">13:30</option>
-                      <option value="14:00" className="bg-charcoal-900">14:00</option>
-                      <option value="14:30" className="bg-charcoal-900">14:30</option>
-                      <option value="20:00" className="bg-charcoal-900">20:00</option>
-                      <option value="20:30" className="bg-charcoal-900">20:30</option>
-                      <option value="21:00" className="bg-charcoal-900">21:00</option>
-                      <option value="21:30" className="bg-charcoal-900">21:30</option>
-                      <option value="22:00" className="bg-charcoal-900">22:00</option>
+                      <option value="" className={selectOptionClasses}>Seleccionar hora</option>
+                      <option value="13:00" className={selectOptionClasses}>13:00</option>
+                      <option value="13:30" className={selectOptionClasses}>13:30</option>
+                      <option value="14:00" className={selectOptionClasses}>14:00</option>
+                      <option value="14:30" className={selectOptionClasses}>14:30</option>
+                      <option value="20:00" className={selectOptionClasses}>20:00</option>
+                      <option value="20:30" className={selectOptionClasses}>20:30</option>
+                      <option value="21:00" className={selectOptionClasses}>21:00</option>
+                      <option value="21:30" className={selectOptionClasses}>21:30</option>
+                      <option value="22:00" className={selectOptionClasses}>22:00</option>
                     </select>
                   </div>
                 </div>

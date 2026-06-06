@@ -46,7 +46,7 @@ export default function Menu() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="menu" className="relative py-32 overflow-hidden">
+    <section id="menu" className="relative py-32 overflow-hidden bg-charcoal-950">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{

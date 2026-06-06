@@ -79,7 +79,7 @@ export default function News() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="news" className="relative py-32 overflow-hidden">
+    <section id="news" className="relative py-32 overflow-hidden bg-charcoal-950">
       <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
         <motion.div
           className="text-center mb-16"

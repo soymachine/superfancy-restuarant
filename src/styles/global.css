@@ -8,7 +8,7 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-charcoal-950 text-white font-sans antialiased;
     overflow-x: hidden;
@@ -16,6 +16,22 @@
 
   ::selection {
     @apply bg-gold-500/30 text-gold-100;
+  }
+
+  /* Force dark mode on native form elements */
+  input, select, textarea {
+    color-scheme: dark;
+  }
+
+  /* Calendar picker icon color for date inputs */
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.6;
+    cursor: pointer;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
   }
 }
 

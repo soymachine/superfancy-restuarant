@@ -18,7 +18,7 @@ export default function Gallery() {
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   return (
-    <section id="gallery" className="relative py-32 overflow-hidden">
+    <section id="gallery" className="relative py-32 overflow-hidden bg-charcoal-950">
       <div className="max-w-7xl mx-auto px-6 lg:px-8" ref={ref}>
         <motion.div
           className="text-center mb-16"
