@@ -201,7 +201,7 @@ const ScrollExpandHero = ({
                   <div className="relative w-full h-full pointer-events-none">
                     <motion.div
                       className="absolute inset-0 z-[2]"
-                      animate={{ opacity: 0.3 + scrollProgress * 0.7 }}
+                      animate={{ opacity: 0.15 + scrollProgress * 0.85 }}
                       transition={{ duration: 0.1 }}
                     >
                       <video
@@ -227,7 +227,7 @@ const ScrollExpandHero = ({
                   <div className="relative w-full h-full">
                     <motion.div
                       className="absolute inset-0 z-[2]"
-                      animate={{ opacity: 0.3 + scrollProgress * 0.7 }}
+                      animate={{ opacity: 0.15 + scrollProgress * 0.85 }}
                       transition={{ duration: 0.1 }}
                     >
                       <img
